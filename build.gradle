@@ -18,24 +18,24 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
-	compile("org.springframework.boot:spring-boot-starter-web:2.1.4.RELEASE")
-	compile("org.springframework.boot:spring-boot-starter-freemarker:2.1.4.RELEASE")
-	compile("org.springframework.boot:spring-boot-starter-actuator:2.1.4.RELEASE")
-	compile('org.springframework.boot:spring-boot-starter-data-jpa:2.1.4.RELEASE')
-	compile('mysql:mysql-connector-java:8.0.15')
+	compile("org.springframework.boot:spring-boot-starter-web:2.1.8.RELEASE")
+	compile("org.springframework.boot:spring-boot-starter-freemarker:2.1.8.RELEASE")
+	compile("org.springframework.boot:spring-boot-starter-actuator:2.1.8.RELEASE")
+	compile('org.springframework.boot:spring-boot-starter-data-jpa:2.1.8.RELEASE')
+	compile('mysql:mysql-connector-java:8.0.17')
 	compile("com.h2database:h2:1.4.199")
 	compile ('org.apache.poi:poi-ooxml:4.1.0')
 	
-	testCompile("org.springframework.boot:spring-boot-starter-test:2.1.4.RELEASE")
+	testCompile("org.springframework.boot:spring-boot-starter-test:2.1.8.RELEASE")
 	
-	compile("org.springframework.security:spring-security-web:5.1.5.RELEASE")
-	compile("org.springframework.security:spring-security-config:5.1.5.RELEASE")
-	compile("org.springframework.security:spring-security-test:5.1.5.RELEASE")
+	compile("org.springframework.security:spring-security-web:5.1.6.RELEASE")
+	compile("org.springframework.security:spring-security-config:5.1.6.RELEASE")
+	compile("org.springframework.security:spring-security-test:5.1.6.RELEASE")
 	
 	compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.9'
 	
-	compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.8'
-	compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.9.8'
+	compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.10'
+	compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.9.10'
 	//compile group: 'org.freemarker', name: 'freemarker', version: '2.3.23'
 	//compile group: 'no.api.freemarker', name: 'freemarker-java8', version: '1.2.0'
 	//compile group: 'org.hibernate', name: 'hibernate-core', version: '5.2.11.Final'
