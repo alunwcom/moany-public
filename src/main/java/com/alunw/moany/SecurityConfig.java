@@ -10,10 +10,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -31,16 +29,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	public void configure(WebSecurity web) throws Exception {
 		web.ignoring().antMatchers("/status");
 	}
-
+	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http
-			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-			.and().authenticationProvider(authenticationProvider()).cors()
-			.and().httpBasic()
-			.and().csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
-			.and().authorizeRequests().antMatchers("/**").hasAuthority("USER");
+		http.authorizeRequests().anyRequest().authenticated().and().oauth2Client().and().oauth2Login();
 	}
+	
+//	@Override
+//	protected void configure(HttpSecurity http) throws Exception {
+//		http
+//			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+//			.and().authenticationProvider(authenticationProvider()).cors()
+//			.and().httpBasic()
+//			.and().csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
+//			.and().authorizeRequests().antMatchers("/**").hasAuthority("USER");
+//	}
 
 	/**
 	 * Configure the authentication provider - using the application UserService and defined password encoder.
