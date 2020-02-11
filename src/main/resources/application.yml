@@ -1,13 +1,19 @@
 ---
 server.port: 9080
 
+okta.oauth2.issuer: https://dev-881128.okta.com/oauth2/default
+okta.oauth2.client-id: 0oa24fvdgUt6MJa5a4x6
+okta.oauth2.client-secret: zb_Lb5Ee-Xq7FfIGc0CaaH5p2KNueEaCWPX5-1mn
+# Configure the callback URL to match the previous section
+okta.oauth2.redirect-uri: /authorization-code/callback
+
 logging.file: moany.log
 logging.file.max-history: 5
 logging.file.max-size: 10MB
 
 moany.homeFolder: ""
 #moany.admin.username: admin
-#moany.admin.password: password
+moany.admin.password: password
 
 server.tomcat.basedir: .
 
