@@ -28,6 +28,9 @@ dependencies {
 	
 	testCompile("org.springframework.boot:spring-boot-starter-test:2.2.4.RELEASE")
 	
+	compile('io.springfox:springfox-swagger2:2.9.2')
+	compile('io.springfox:springfox-swagger-ui:2.9.2')
+	
 	compile("org.springframework.security:spring-security-web:5.2.1.RELEASE")
 	compile("org.springframework.security:spring-security-config:5.2.1.RELEASE")
 	compile("org.springframework.security:spring-security-test:5.2.1.RELEASE")
