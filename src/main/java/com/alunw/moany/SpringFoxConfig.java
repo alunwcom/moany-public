@@ -23,6 +23,7 @@ public class SpringFoxConfig {
 				.paths(PathSelectors.any())
 				//.paths(PathSelectors.regex("^/rest/.*"))
 				.build()
+				.useDefaultResponseMessages(false)
 				.apiInfo(getAppInfo());
 	}
 
@@ -30,7 +31,7 @@ public class SpringFoxConfig {
 		return new ApiInfoBuilder()
 				.title("Moany API")
 				.description("...description here...")
-				.version("1.0.0")
+				.version("0.1.0")
 				//.termsOfServiceUrl("http://javahungry.blogspot.com")
 				//.license("Copyleft")
 				//.licenseUrl("http://javahungry.blogspot.com")
