@@ -11,31 +11,34 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+/**
+ * SpringFox configuration for Swagger 2
+ *
+ */
 @Configuration
 @EnableSwagger2
 public class SpringFoxConfig {
 	@Bean
 	public Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2)
-				.select()
-				//.apis(RequestHandlerSelectors.any())
-				.apis(RequestHandlerSelectors.basePackage("com.alunw"))
-				.paths(PathSelectors.any())
-				//.paths(PathSelectors.regex("^/rest/.*"))
-				.build()
-				.useDefaultResponseMessages(false)
-				.apiInfo(getAppInfo());
+			.select()
+			//.apis(RequestHandlerSelectors.any())
+			.apis(RequestHandlerSelectors.basePackage("com.alunw.moany.rest"))
+			.paths(PathSelectors.any())
+			//.paths(PathSelectors.regex("^/rest/.*"))
+			.build()
+			.useDefaultResponseMessages(false)
+			.apiInfo(getAppInfo());
 	}
-
+	
 	private ApiInfo getAppInfo() {
 		return new ApiInfoBuilder()
-				.title("Moany API")
-				.description("...description here...")
-				.version("0.1.0")
-				//.termsOfServiceUrl("http://javahungry.blogspot.com")
-				//.license("Copyleft")
-				//.licenseUrl("http://javahungry.blogspot.com")
-				.build();
-
+			.title("moany-public")
+			.description("REST API for moany-public application...")
+			.version("0.1.0")
+			//.termsOfServiceUrl("http://javahungry.blogspot.com")
+			//.license("Copyleft")
+			//.licenseUrl("http://javahungry.blogspot.com")
+			.build();
 	}
 }

@@ -32,7 +32,10 @@ import com.alunw.moany.services.AccountService;
 import com.alunw.moany.services.TransactionService;
 import com.alunw.moany.services.validators.AccountValidator;
 
+import io.swagger.annotations.Api;
+
 @RestController
+@Api(tags = "Account API", description= "Access accounts")
 @RequestMapping("/rest/accounts/v2/")
 public class RestAccountController {
 	

@@ -14,10 +14,10 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
 @RestController
-@Api(tags = "custom")
+@Api(tags = "Account API", description= "Access accounts")
 public class CustomController {
 	@RequestMapping(value = "/custom", method = RequestMethod.POST)
-	@ApiOperation(value = "API to GET Test list String", notes = "Get all string list", tags = { "TestString" })
+	@ApiOperation(value = "API to GET Test list String", notes = "Get all string list")
 	@ApiResponses(value = {
 		@ApiResponse(code = 200, message = "List retrieve success", response = List.class),
 		@ApiResponse(code = 404, message = "Fail!", response = String.class)
